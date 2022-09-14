@@ -24,17 +24,19 @@ int main()
         for (int j = 0; j < n - i; j++)
         {
             fila[i][j] = fila[i - 1][j] * fila[i - 1][j + 1];
+            cout << fila[i][j] << " ";
         }
+        cout << endl;
     }
 
     int ultima = fila[n - 1][0];
     if (ultima == -1)
     {
-        cout << "branca -1" << endl;
+        cout << "branca" << endl;
     }
     if (ultima == 1)
     {
-        cout << "preta 1" << endl;
+        cout << "preta" << endl;
     }
 
     return 0;

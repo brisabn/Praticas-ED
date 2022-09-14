@@ -40,15 +40,30 @@ int main()
             cout << "branca" << endl;
         }
     }
-    else
+    else if (n % 2 != 0)
     {
-        if (((n_preta % 2 == 0) && (fila[n / 2] == -1)) || ((n_branca % 2 == 0) && (fila[n / 2] == 1)))
+        n_branca = 0, n_preta = 0;
+        int fila_cima[n - 1];
+
+        for (int i = 0; i < n - 1; i++)
         {
-            cout << "branca" << endl;
+            fila_cima[i] = fila[i] * fila[i + 1];
+            if (fila_cima[i] == 1)
+            {
+                n_preta++;
+            }
+            else
+            {
+                n_branca++;
+            }
+        }
+        if (n_preta % 2 == 0)
+        {
+            cout << "preta" << endl;
         }
         else
         {
-            cout << "preta" << endl;
+            cout << "branca" << endl;
         }
     }
     return 0;
